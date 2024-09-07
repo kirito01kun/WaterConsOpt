@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "g++ build active file",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-g", // Include debugging information
+          "${file}", // The currently open file in the editor
+          "-o", // Output file option
+          "${fileDirname}\\${fileBasenameNoExtension}.exe" // Output file name without extension
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Custom task to build the active C++ file using MinGW g++."
+      }
+    ]
+  }
+  
